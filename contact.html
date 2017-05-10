@@ -91,10 +91,27 @@ permalink: /contact/
           </ul>-->
         </div>
       </div>
-      <div class="col-md-6 col-sm-12">
+      <div class="col-md-6 col-sm-12 padding-maps-mobile">
         <div class="block">
           <h2>Google Map</h2>
-            <div class="google-map">
+            <!-- quick fix -->
+            <style>
+              .map-responsive{
+                  overflow:hidden;
+                  padding-bottom:56.25%;
+                  position:relative;
+                  height:0;
+              }
+              .map-responsive iframe{
+                  left:0;
+                  top:0;
+                  height:100%;
+                  width:100%;
+                  position:absolute;
+              }
+            </style>
+
+            <div class="google-map map-responsive">
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3874.7458317035257!2d100.32650584987151!3d13.794189772908993!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x087771d8cc86e87e!2z4LiE4LiT4Liw4Lin4Li04Lio4Lin4LiB4Lij4Lij4Lih4Lio4Liy4Liq4LiV4Lij4LmM!5e0!3m2!1sth!2sth!4v1420446166627" width="555" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
