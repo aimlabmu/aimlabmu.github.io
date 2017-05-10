@@ -16,7 +16,7 @@ keep_files:
 # Site settings
 title: AIM SOLUTION TEAM
 subtitle: "Create innovations to improve your quality of life"
-url: "http://aimlabmu.github.io" # the base hostname & protocol for your site
+url: "//aimlabmu.github.io" # the base hostname & protocol for your site
 # baseurl: "/the/subpath/of/your/site" # Set this value to "" if you want your site to be root
 # baseurl: "/airspace-jekyll"
 baseurl: ""
