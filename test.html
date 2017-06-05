@@ -28,22 +28,26 @@ permalink: /testfea/
 </style>
 
 
+<!--<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">Panel Body</div>
+      </div>
+    </div>
+  </div>-->
 
 <section id="contents">
   <div class="container">
-    <div class="col-md-6">
-      <h1>Here should be the list of content</h1>
-      {% for video in site.static_files %} 
-        {% if video.path contains 'vid' %}
-          <a onclick="changesrc('{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br>
-        {% endif %} 
-      {% endfor %}
-    </div>
+    
 
+    <!-- Video preview -->
     <div class="col-md-6">
       <div class="video-js-responsive-container vjs-hd">
-        <video id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;" preload="auto"
-          data-setup="{}">
+        <video id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;" preload="auto" data-setup="{}">
           <source id="vid-src" src="{{ site.baseurl }}/testvdo.mp4" type='video/mp4'>
           <!--<source src="MY_VIDEO.webm" type='video/webm'>-->
           <p class="vjs-no-js">
@@ -53,6 +57,121 @@ permalink: /testfea/
         </video>
       </div>
     </div>
+
+
+    <!-- Contents list -->
+    <div class="col-md-6">
+      <h1>Contents List</h1>
+      <!-- use bootstrap panel for grouping contents -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <!-- 1-50 -->
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#onetofifty">1-50-voice te-sp</a>
+            </h4>
+          </div>
+          <div id="onetofifty" class="panel-collapse collapse">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains '1-50-voice te-sp' %}
+                  <ul class="list-group">
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
+                  </ul>
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
+          </div>
+          <!-- 7 Days -->
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#sevenDays">7Days</a>
+            </h4>
+          </div>
+          <div id="sevenDays" class="panel-collapse collapse">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains '7Days' %}
+                  <ul class="list-group">
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
+                  </ul>
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
+          </div>
+          <!-- 12 Months -->
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#twmonths">12months</a>
+            </h4>
+          </div>
+          <div id="twmonths" class="panel-collapse collapse">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains '12months' %}
+                  <ul class="list-group">
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
+                  </ul>
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
+          </div>
+          <!-- Bodypart -->
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#bdparts">Bodypart</a>
+            </h4>
+          </div>
+          <div id="bdparts" class="panel-collapse collapse">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains 'Bodypart' %}
+                  <ul class="list-group">
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
+                  </ul>
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
+          </div>
+          <!-- COLOR ice cream -->
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#clicecream">COLOR ice cream</a>
+            </h4>
+          </div>
+          <div id="clicecream" class="panel-collapse collapse">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains 'COLOR ice cream' %}
+                  <ul class="list-group">
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
+                  </ul>
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
+          </div>
+          <!-- Math -->
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#math">Math</a>
+            </h4>
+          </div>
+          <div id="math" class="panel-collapse collapse">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains 'Math' %}
+                  <ul class="list-group">
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
+                  </ul>
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -61,7 +180,23 @@ permalink: /testfea/
     var vidsrc = document.getElementById('my-video_html5_api');
     vidsrc.setAttribute('src', newsrc);
     console.log(newsrc);
+
+    // var aobj = document.getElementById('subitem');
+    // aobj.innerHTML = getFilename(newsrc);
+    getSplitPath(newsrc);
   }
+
+  function getSplitPath(fullPath) {
+    var splitedPath = fullPath.split("/");
+    console.log(splitedPath);
+  }
+
+  function getFilename(fullPath) {
+    var filename = fullPath.replace(/^.*[\\\/]/, '');
+    console.log(filename);
+    return filename;
+  }
+
 </script>
 
 <script src="http://vjs.zencdn.net/5.19.2/video.js"></script>
