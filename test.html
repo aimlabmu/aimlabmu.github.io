@@ -1,0 +1,56 @@
+--- 
+layout: page 
+title: Contact Us 
+permalink: /testfea/ 
+---
+
+<style>
+  .video-js-responsive-container.vjs-hd {
+    padding-top: 56.25%;
+  }
+  
+  .video-js-responsive-container.vjs-sd {
+    padding-top: 75%;
+  }
+  
+  .video-js-responsive-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .video-js-responsive-container .video-js {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+
+<section id="contents">
+  <div class="container">
+    <div class="col-md-6">
+      <h1>Here should be the list of content</h1>
+      <ul>
+        <li>test1</li>
+        <li>test2</li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <div class="video-js-responsive-container vjs-hd">
+        <video id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;" poster="{{ site.baseurl }}/testvdo.JPG"
+          data-setup="{}">
+          <source src="{{ site.baseurl }}/testvdo.mp4" type='video/mp4'>
+          <!--<source src="MY_VIDEO.webm" type='video/webm'>-->
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="http://vjs.zencdn.net/5.19.2/video.js"></script>
