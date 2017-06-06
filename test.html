@@ -56,8 +56,8 @@ permalink: /testfea/
     <div class="col-md-6">
       <h1 class="toptitle">Video Preview</h1>
       <div class="video-js-responsive-container vjs-hd">
-        <video id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;" preload="auto" data-setup="{}">
-          <source id="vid-src" src="{{ site.baseurl }}/testvdo.mp4" type='video/mp4'>
+        <video oncontextmenu="return false;" loop="true" id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;" preload="auto" data-setup="{}">
+          <source id="vid-src" src="{{ site.baseurl }}/vid/1-50-voice te-sp/01-one-1.mp4" type='video/mp4'>
           <!--<source src="MY_VIDEO.webm" type='video/webm'>-->
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -77,87 +77,112 @@ permalink: /testfea/
           <!-- 1-50 -->
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" href="#onetofifty">1-50-voice te-sp</a>
+              <a data-toggle="collapse" href="#onetofifty">1-10</a>
             </h4>
           </div>
           <div id="onetofifty" class="panel-collapse collapse">
+            <ol class="list-group">
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains '1-50-voice te-sp' %}
-                  <ul class="list-group">
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
-                  </ul>
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                      {% assign words = video.path | split: '/' %}
+                      {% assign splitedFilename = words[3] | split: '.' %}
+                      {{ splitedFilename[1] }}
+                      </a><br>
+                    </li>
                 {% endif %} 
               {% endif %} 
             {% endfor %}
+            </ol>
           </div>
           <!-- 7 Days -->
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" href="#sevenDays">7Days</a>
+              <a data-toggle="collapse" href="#sevenDays">7 Days</a>
             </h4>
           </div>
           <div id="sevenDays" class="panel-collapse collapse">
+            <ol class="list-group">
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains '7Days' %}
-                  <ul class="list-group">
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
-                  </ul>
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                      {% assign words = video.path | split: '/' %}
+                      {% assign splitedFilename = words[3] | split: '.' %}
+                      {{ splitedFilename[1] }}
+                      </a><br>
+                    </li>
                 {% endif %} 
               {% endif %} 
             {% endfor %}
+            </ol>
           </div>
           <!-- 12 Months -->
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" href="#twmonths">12months</a>
+              <a data-toggle="collapse" href="#twmonths">12 Months</a>
             </h4>
           </div>
           <div id="twmonths" class="panel-collapse collapse">
+            <ol class="list-group">
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains '12months' %}
-                  <ul class="list-group">
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
-                  </ul>
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                      {% assign words = video.path | split: '/' %}
+                      {% assign splitedFilename = words[3] | split: '.' %}
+                      {{ splitedFilename[1] }}
+                      </a><br>
+                    </li>
                 {% endif %} 
               {% endif %} 
             {% endfor %}
+            </ol>
           </div>
           <!-- Bodypart -->
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" href="#bdparts">Bodypart</a>
+              <a data-toggle="collapse" href="#bdparts">Body Parts</a>
             </h4>
           </div>
           <div id="bdparts" class="panel-collapse collapse">
+            <ol class="list-group">
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains 'Bodypart' %}
-                  <ul class="list-group">
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
-                  </ul>
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                      {% assign words = video.path | split: '/' %}
+                      {% assign splitedFilename = words[3] | split: '.' %}
+                      {{ splitedFilename[1] }}
+                      </a><br>
+                    </li>
                 {% endif %} 
               {% endif %} 
             {% endfor %}
+            </ol>
           </div>
           <!-- COLOR ice cream -->
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" href="#clicecream">COLOR ice cream</a>
+              <a data-toggle="collapse" href="#clicecream">Colour</a>
             </h4>
           </div>
           <div id="clicecream" class="panel-collapse collapse">
+            <ol class="list-group">
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
-                {% if video.path contains 'COLOR ice cream' %}
-                  <ul class="list-group">
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
-                  </ul>
+                {% if video.path contains 'COLOR ice cream' %}    
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                      {% assign words = video.path | split: '/' %}
+                      {% assign splitedFilename = words[3] | split: '.' %}
+                      {{ splitedFilename[1] }}
+                      </a><br>
+                    </li>
                 {% endif %} 
               {% endif %} 
             {% endfor %}
+            </ol>
           </div>
           <!-- Math -->
           <div class="panel-heading">
@@ -166,15 +191,20 @@ permalink: /testfea/
             </h4>
           </div>
           <div id="math" class="panel-collapse collapse">
+            <ol class="list-group">
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
-                {% if video.path contains 'Math' %}
-                  <ul class="list-group">
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">{{ site.baseurl }}{{ video.path }}"</a><br></li>
-                  </ul>
+                {% if video.path contains 'Math' %}    
+                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                      {% assign words = video.path | split: '/' %}
+                      {% assign splitedFilename = words[3] | split: '.' %}
+                      {{ splitedFilename[1] }}
+                      </a><br>
+                    </li>
                 {% endif %} 
               {% endif %} 
             {% endfor %}
+            </ol>
           </div>
 
         </div>
@@ -184,10 +214,12 @@ permalink: /testfea/
   </div>
 </section>
 
+<script src="http://vjs.zencdn.net/5.19.2/video.js"></script>
 <script>
   function changesrc(newsrc) {
     var vidsrc = document.getElementById('my-video_html5_api');
     vidsrc.setAttribute('src', newsrc);
+    vidsrc.setAttribute('autoplay', true);
     console.log(newsrc);
 
     // var aobj = document.getElementById('subitem');
@@ -195,9 +227,14 @@ permalink: /testfea/
     getSplitPath(newsrc);
   }
 
+  function getCategory(fullPath) {
+    return getSplitPath(fullPath)[2];
+  }
+
   function getSplitPath(fullPath) {
     var splitedPath = fullPath.split("/");
-    console.log(splitedPath);
+    // console.log(splitedPath);
+    return splitedPath;
   }
 
   function getFilename(fullPath) {
@@ -206,6 +243,8 @@ permalink: /testfea/
     return filename;
   }
 
+  document.addEventListener('DOMContentLoaded', function() {
+    
+  }, false);
 </script>
 
-<script src="http://vjs.zencdn.net/5.19.2/video.js"></script>
