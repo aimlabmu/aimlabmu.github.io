@@ -25,6 +25,14 @@ permalink: /testfea/
     top: 0;
     left: 0;
   }
+
+  .toptitle {
+    text-align: center;
+  }
+
+  .vjs-hd {
+    margin-bottom: 5em;
+  }
 </style>
 
 
@@ -46,6 +54,7 @@ permalink: /testfea/
 
     <!-- Video preview -->
     <div class="col-md-6">
+      <h1 class="toptitle">Video Preview</h1>
       <div class="video-js-responsive-container vjs-hd">
         <video id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;" preload="auto" data-setup="{}">
           <source id="vid-src" src="{{ site.baseurl }}/testvdo.mp4" type='video/mp4'>
@@ -61,7 +70,7 @@ permalink: /testfea/
 
     <!-- Contents list -->
     <div class="col-md-6">
-      <h1>Contents List</h1>
+      <h1 class="toptitle">Contents List</h1>
       <!-- use bootstrap panel for grouping contents -->
       <div class="panel-group">
         <div class="panel panel-default">
