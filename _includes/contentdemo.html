@@ -1,9 +1,4 @@
---- 
-layout: page 
-title: Contact Us 
-permalink: /testfea/ 
----
-
+<!-- Content Demo Start -->
 <style>
   .video-js-responsive-container.vjs-hd {
     padding-top: 56.25%;
@@ -33,6 +28,19 @@ permalink: /testfea/
   .vjs-hd {
     margin-bottom: 5em;
   }
+
+  #subitem {
+    padding: 2px 3px;
+  }
+
+  .list-group {
+    font-size: 1.25em;
+    padding: 0.25em 0 0.25em 2.25em;
+  }
+
+  body {
+    /*overflow-y: hidden;*/
+  }
 </style>
 
 
@@ -57,7 +65,7 @@ permalink: /testfea/
       <h1 class="toptitle">Video Preview</h1>
       <div class="video-js-responsive-container vjs-hd">
         <video oncontextmenu="return false;" loop="true" id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;" preload="auto" data-setup="{}">
-          <source id="vid-src" src="{{ site.baseurl }}/vid/1-50-voice te-sp/01-one-1.mp4" type='video/mp4'>
+          <source id="vid-src" src="{{ site.baseurl }}/vid/1-50-voice te-sp/01.One.mp4" type='video/mp4'>
           <!--<source src="MY_VIDEO.webm" type='video/webm'>-->
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -85,7 +93,7 @@ permalink: /testfea/
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains '1-50-voice te-sp' %}
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                    <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
@@ -107,7 +115,7 @@ permalink: /testfea/
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains '7Days' %}
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                    <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
@@ -129,7 +137,7 @@ permalink: /testfea/
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains '12months' %}
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                    <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
@@ -151,7 +159,7 @@ permalink: /testfea/
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains 'Bodypart' %}
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                    <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
@@ -173,7 +181,7 @@ permalink: /testfea/
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains 'COLOR ice cream' %}    
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                    <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
@@ -195,7 +203,7 @@ permalink: /testfea/
             {% for video in site.static_files %} 
               {% if video.path contains 'vid' %} 
                 {% if video.path contains 'Math' %}    
-                    <li><a id="subitem" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                    <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}

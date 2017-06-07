@@ -471,9 +471,9 @@ font header .navbar-default .navbar-nav li a:hover {
   transition: all 0.4s ease-in-out;
 }
 #portfolio-work .block .portfolio-contant ul li {
-  float: left;
-  width: 32.22%;
-  overflow: hidden;
+  /*float: left;*/
+  /*width: 32.22%;*/
+  /*overflow: hidden;*/
   margin: 6px;
   position: relative;
 }
@@ -489,8 +489,8 @@ font header .navbar-default .navbar-nav li a:hover {
   transform: translate(0%, -50%);
 }
 #portfolio-work .block .portfolio-contant ul li a {
-  display: block;
-  color: #fff;
+  /*display: block;*/
+  /*color: #fff;*/
 }
 #portfolio-work .block .portfolio-contant ul li a h2 {
   font-size: 22px;
