@@ -37,3 +37,7 @@
 html, body {
     height: 100% !important;
 }
+
+.Demo {
+  width:100%;
+}
