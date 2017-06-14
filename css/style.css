@@ -41,3 +41,19 @@ html, body {
 .Demo {
   width:100%;
 }
+
+.video-controller {
+  text-align: center;
+  display: block;
+}
+
+.video-controller > button {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+.video-controller > .current-content {
+  font-size: 1.75em;
+  font-weight: 600;
+  vertical-align: middle;
+}
