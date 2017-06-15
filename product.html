@@ -25,7 +25,8 @@ permalink: /product/
             <div class="block">
               <div class="portfolio-menu">
                 <ul>
-                    <li class="filter" data-filter=".Robot">Robot Assisted Training</li>
+                    <li id="click_on_start" class="filter" data-filter=".RobotAssisted">Robot Assisted Training</li>
+                    <li class="filter" data-filter=".AIrobot">AIM Robot</li>
                     <li class="filter" data-filter=".Demo">Demo Contents</li>
                     <!--<li class="filter" data-filter=".Branding">Branding</li>
                     <li class="filter" data-filter=".Websites">Websites</li>
@@ -36,30 +37,11 @@ permalink: /product/
               </div>
               <div class="portfolio-contant">
                 <div id="portfolio-contant-active">
-                  <li class="mix Robot">
-                    <p>Currently, the number of children with special needs is increasing each year. In US, CDC has estimated that 1 in 68 children has been identified with autism spectrum disorders (ASD). It is approximately 1% of world population (CDC, 2014). In Thailand, it is approximately 400,000 children with ASD. The children are more likely to play alone and gain difficulty in interacting with people because the communication and social interaction skill impairment problem. The children with ASD required communication training and behavior intervention regularly. Standard training session should be set up at least 40 hours a week, six to eight hours a day. It consumes much effort for teachers, caregivers, parents, or even therapists. Currently, the number of therapists is insufficient for the children. There are approximately 100 speech therapists and 1100 occupational therapists in Thailand. Some children can meet the therapist only once in a month. Training sessions are mainly set up at schools and households. At schools, a teacher must look after upmost 7 children with ASD at a time. It is not easy for the teacher particularly when a child disrupts the classroom by either screaming or running around. Classroom management cannot be made easily as found in the typically developing children. At home, parents have suffered from workloads, depressive mood and anxiety in taking care of their child. Efficient training sessions are thus difficult to create at home particularly for inexperienced parents or caregivers.
-                    </p>
-
-                    <img class="prod_img_1" style="width:25%; display:block; margin:0 auto" src="{{ site.baseurl }}/img/aimweb/meedee.jpg" alt="Meedee Robot">
-                    <p style="text-align:center"><b>Figure 1</b> Robot assisted communication training</p>
-
-                    <p>
-                    We propose the robot assisted communication training. It is not used to replace human being in taking care of the children. On the contrary, it is used by caregivers, teachers, or even therapists to efficiently set up a training session for each child as much as they want. Training frequency can be enhanced. The robot can be used at home or schools or hospitals. Training with the robot creates interactive and dynamic learning. It makes learning more fun and can reduce stress in teaching or training the children. Children engagement and attention can be drawn easily. We have more than 100 original contents which can be freely downloaded from a content sharing platform. This helps in reducing burdens in preparing training contents for the child. The robot is also simply programmed. Suitable content can be developed to fit with individual needs. Moreover, with the content sharing platform, users can share and monetize their developed created contents with the others.
-                    </p>
-                    <br/>
-                    <img class="prod_img_2" style="width:60%; display:block; margin:0 auto" src="{{ site.baseurl }}/img/aimweb/co-creation.jpg" alt="Co-creation Platform">
-                    <p style="text-align:center"><b>Figure 2</b> Robot and co-creation platform</p>
-                    <br/>
-
-                    <h3 style="text-align:center">VDO shows that the robot is user-friendly and easy to program</h3>
-                    <!-- quick fix only need once -->
-                    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-                    <div class='embed-container'><iframe src='https://www.youtube.com/embed/9wADlHbNedw' frameborder='0' allowfullscreen></iframe></div>
-
-                    <br/>
-                    
-                    <h3 style="text-align:center">VDO shows the robot can be easily used in group therapy</h3>
-                    <div class='embed-container'><iframe src='https://www.youtube.com/embed/Ymd6bSe6NVw' frameborder='0' allowfullscreen></iframe></div>
+                  <li class="mix RobotAssisted">
+                    {% include robotassistedtraining.html %}
+                  </li>
+                  <li class="mix AIrobot">
+                    {% include aimrobot.html %}
                   </li>
                   <li class="mix Demo">
                     {% include contentdemo.html %}
@@ -147,69 +129,9 @@ permalink: /product/
     </div>
 </section>
 
+<script>
+  $(document).ready(function(){
+    document.getElementById("click_on_start").click();
+});
+</script>
 
-<!-- Clients Logo Section Start -->
-<!--<section id="clients-logo-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          <div id="clients-logo" class="owl-carousel">
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo1.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo2.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo3.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo4.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo5.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo3.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo2.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo5.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo1.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo4.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo5.png" alt="Features">
-            </div>
-            <div class="clients-logo-img">
-              <img src="{{ site.baseurl }}/img/clients/clients-logo3.png" alt="Features">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>-->
-
-
-<!-- Call to action Start -->
-<!--<section id="call-to-action">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          <h2>We design delightful digital experiences.</h2>
-          <p>Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design.</p>
-          <a class="btn btn-default btn-call-to-action" href="#" >Tell Us Your Story</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>-->
