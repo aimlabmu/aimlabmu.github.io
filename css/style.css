@@ -1,20 +1,20 @@
 /*
- * This css file includes styles added in the jekyll port of this theme.
- * To find the original style.css that ships with Airspace, read airspace.css
- *
- */
+* This css file includes styles added in the jekyll port of this theme.
+* To find the original style.css that ships with Airspace, read airspace.css
+*
+*/
 
- .italic {
-   font-style: italic;
- }
+.italic {
+  font-style: italic;
+}
 
- .bold {
-   font-weight: bold;
- }
+.bold {
+  font-weight: bold;
+}
 
- .center-text {
-   text-align: center;
- }
+.center-text {
+  text-align: center;
+}
 
 .post-area {
   padding: 40px;
@@ -35,9 +35,63 @@
 
 /* custom */
 html, body {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 .Demo {
   width:100%;
+}
+
+.video-controller {
+  text-align: center;
+  display: block;
+}
+
+.video-controller > button {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+.video-controller > #current-content {
+  font-size: 1.75em;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.video-js-responsive-container.vjs-hd {
+  padding-top: 56.25%;
+}
+
+.video-js-responsive-container.vjs-sd {
+  padding-top: 75%;
+}
+
+.video-js-responsive-container {
+  width: 100%;
+  position: relative;
+}
+
+.video-js-responsive-container .video-js {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.toptitle {
+  text-align: center;
+}
+
+.vjs-hd {
+  margin-bottom: 1.5em;
+}
+
+#subitem {
+  padding: 2px 3px;
+}
+
+.list-group {
+  font-size: 1.25em;
+  padding: 0.25em 0 0.25em 2.25em;
 }

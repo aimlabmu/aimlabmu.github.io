@@ -1,48 +1,4 @@
 <!-- Content Demo Start -->
-<style>
-  .video-js-responsive-container.vjs-hd {
-    padding-top: 56.25%;
-  }
-  
-  .video-js-responsive-container.vjs-sd {
-    padding-top: 75%;
-  }
-  
-  .video-js-responsive-container {
-    width: 100%;
-    position: relative;
-  }
-  
-  .video-js-responsive-container .video-js {
-    height: 100% !important;
-    width: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .toptitle {
-    text-align: center;
-  }
-  
-  .vjs-hd {
-    margin-bottom: 5em;
-  }
-  
-  #subitem {
-    padding: 2px 3px;
-  }
-  
-  .list-group {
-    font-size: 1.25em;
-    padding: 0.25em 0 0.25em 2.25em;
-  }
-  
-  body {
-    /*overflow-y: hidden;*/
-  }
-</style>
-
 
 <!--<div class="panel panel-default">
       <div class="panel-heading">
@@ -74,8 +30,17 @@
           </p>
         </video>
       </div>
+      <div class="video-controller">
+        <button type="button" class="btn btn-default" onclick="buttonLeft()">
+          <i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i>
+        </button>
+        {% assign contentorder = 1 %}
+        <span id="current-content">{{ contentorder }}</span>
+        <button type="button" class="btn btn-default" onclick="buttonRight()">
+          <i class="fa fa-arrow-right fa-3x" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
-
 
     <!-- Contents list -->
     <div class="zeropad-mobile col-md-6">
@@ -89,16 +54,22 @@
               <a data-toggle="collapse" href="#onetofifty">1-10</a>
             </h4>
           </div>
+          
           <div id="onetofifty" class="panel-collapse collapse">
             <ol class="list-group">
-              {% for video in site.static_files %} {% if video.path contains 'vid' %} {% if video.path contains '1-50-voice te-sp' %}
-              <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains '1-50-voice te-sp' %}
+                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
                       </a><br>
-              </li>
-              {% endif %} {% endif %} {% endfor %}
+                    </li>
+                    {% assign contentorder = contentorder | plus: 1 %}
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
             </ol>
           </div>
           <!-- 7 Days -->
@@ -109,14 +80,19 @@
           </div>
           <div id="sevenDays" class="panel-collapse collapse">
             <ol class="list-group">
-              {% for video in site.static_files %} {% if video.path contains 'vid' %} {% if video.path contains '7Days' %}
-              <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains '7Days' %}
+                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
                       </a><br>
-              </li>
-              {% endif %} {% endif %} {% endfor %}
+                    </li>
+                    {% assign contentorder = contentorder | plus: 1 %}
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
             </ol>
           </div>
           <!-- 12 Months -->
@@ -127,14 +103,19 @@
           </div>
           <div id="twmonths" class="panel-collapse collapse">
             <ol class="list-group">
-              {% for video in site.static_files %} {% if video.path contains 'vid' %} {% if video.path contains '12months' %}
-              <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains '12months' %}
+                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
                       </a><br>
-              </li>
-              {% endif %} {% endif %} {% endfor %}
+                    </li>
+                    {% assign contentorder = contentorder | plus: 1 %}
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
             </ol>
           </div>
           <!-- Bodypart -->
@@ -145,14 +126,19 @@
           </div>
           <div id="bdparts" class="panel-collapse collapse">
             <ol class="list-group">
-              {% for video in site.static_files %} {% if video.path contains 'vid' %} {% if video.path contains 'Bodypart' %}
-              <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains 'Bodypart' %}
+                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
                       </a><br>
-              </li>
-              {% endif %} {% endif %} {% endfor %}
+                    </li>
+                    {% assign contentorder = contentorder | plus: 1 %}
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
             </ol>
           </div>
           <!-- COLOR ice cream -->
@@ -163,14 +149,19 @@
           </div>
           <div id="clicecream" class="panel-collapse collapse">
             <ol class="list-group">
-              {% for video in site.static_files %} {% if video.path contains 'vid' %} {% if video.path contains 'COLOR ice cream' %}
-              <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains 'COLOR ice cream' %}    
+                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
                       </a><br>
-              </li>
-              {% endif %} {% endif %} {% endfor %}
+                    </li>
+                    {% assign contentorder = contentorder | plus: 1 %}
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
             </ol>
           </div>
           <!-- Math -->
@@ -181,14 +172,19 @@
           </div>
           <div id="math" class="panel-collapse collapse">
             <ol class="list-group">
-              {% for video in site.static_files %} {% if video.path contains 'vid' %} {% if video.path contains 'Math' %}
-              <li id="subitem"><a onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+            {% for video in site.static_files %} 
+              {% if video.path contains 'vid' %} 
+                {% if video.path contains 'Math' %}    
+                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
                       {% assign words = video.path | split: '/' %}
                       {% assign splitedFilename = words[3] | split: '.' %}
                       {{ splitedFilename[1] }}
                       </a><br>
-              </li>
-              {% endif %} {% endif %} {% endfor %}
+                    </li>
+                    {% assign contentorder = contentorder | plus: 1 %}
+                {% endif %} 
+              {% endif %} 
+            {% endfor %}
             </ol>
           </div>
 
@@ -201,6 +197,10 @@
 
 <script src="//vjs.zencdn.net/5.19.2/video.js"></script>
 <script>
+  var currentContent;
+  var currentContentLabel;
+  var maxContentNumber = parseInt({{ contentorder | minus: 1 }});
+
   function changesrc(newsrc) {
     var vidsrc = document.getElementById('my-video_html5_api');
     vidsrc.setAttribute('src', newsrc);
@@ -210,6 +210,10 @@
     // var aobj = document.getElementById('subitem');
     // aobj.innerHTML = getFilename(newsrc);
     getSplitPath(newsrc);
+
+    // TODO, update current label when user click on content name directly
+    // update current content label
+    // updateContentLabel(currentContent);
   }
 
   function getCategory(fullPath) {
@@ -232,4 +236,28 @@
 
   }, false);
 
+  $(document).ready(function(){
+    currentContentLabel = document.getElementById("current-content");
+    currentContent = parseInt(currentContentLabel.innerHTML);
+  });
+
+  function updateContentLabel(newCurrent) {
+    currentContentLabel.innerHTML = newCurrent;
+  }
+
+  function buttonRight() {
+    if (currentContent < maxContentNumber) {
+      currentContent += 1;
+      updateContentLabel(currentContent);
+      document.getElementById("contentid-"+currentContent.toString()).click();
+    }
+  }
+
+  function buttonLeft() {
+    if (currentContent > 1) {
+      currentContent -= 1;
+      updateContentLabel(currentContent);
+      document.getElementById("contentid-"+currentContent.toString()).click();
+    }
+  }
 </script>
