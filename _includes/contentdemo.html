@@ -22,7 +22,7 @@
       <div class="video-js-responsive-container vjs-hd">
         <video oncontextmenu="return false;" loop="true" id="my-video" class="video-js" controls preload="100%" style="margin: 0px auto;"
           preload="auto" data-setup="{}">
-          <source id="vid-src" src="{{ site.baseurl }}/vid/1-50-voice te-sp/01.One.mp4" type='video/mp4'>
+          <source id="vid-src" src="{{ site.baseurl }}/vid/onetofifty/01.One.mp4" type='video/mp4'>
           <!--<source src="MY_VIDEO.webm" type='video/webm'>-->
           <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -48,150 +48,36 @@
       <!-- use bootstrap panel for grouping contents -->
       <div class="panel-group">
         <div class="panel panel-default">
-          <!-- 1-50 -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#onetofifty">1-10</a>
-            </h4>
-          </div>
-          
-          <div id="onetofifty" class="panel-collapse collapse">
-            <ol class="list-group">
-            {% for video in site.static_files %} 
-              {% if video.path contains 'vid' %} 
-                {% if video.path contains '1-50-voice te-sp' %}
-                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
-                      {% assign words = video.path | split: '/' %}
-                      {% assign splitedFilename = words[3] | split: '.' %}
-                      {{ splitedFilename[1] }}
-                      </a><br>
-                    </li>
-                    {% assign contentorder = contentorder | plus: 1 %}
+          {% assign categories = "onetofifty|sevenDays|twmonths|bdparts|clicecream|math" | split: "|" %}
+          {% assign cat_name = "1-50|7 Days|12 Months|Body Parts|Colour|Math" | split: "|" %}
+          {% for cat in categories %}
+            <!-- Loop this snippet using liquid forloop -->
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#{{ cat }}">{{ cat_name[ forloop.index0 ] }}</a>
+              </h4>
+            </div>
+            <div id="{{ cat }}" class="panel-collapse collapse">
+              <ol class="list-group">
+              {% for video in site.static_files %} 
+                {% if video.path contains 'vid' %} 
+                  {% if video.path contains cat %}
+                      <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
+                        {% assign words = video.path | split: '/' %}
+                        {% assign splitedFilename = words[3] | split: '.' %}
+                        {{ splitedFilename[1] }}
+                        </a><br>
+                      </li>
+                      {% assign contentorder = contentorder | plus: 1 %}
+                  {% endif %} 
                 {% endif %} 
-              {% endif %} 
-            {% endfor %}
-            </ol>
-          </div>
-          <!-- 7 Days -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#sevenDays">7 Days</a>
-            </h4>
-          </div>
-          <div id="sevenDays" class="panel-collapse collapse">
-            <ol class="list-group">
-            {% for video in site.static_files %} 
-              {% if video.path contains 'vid' %} 
-                {% if video.path contains '7Days' %}
-                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
-                      {% assign words = video.path | split: '/' %}
-                      {% assign splitedFilename = words[3] | split: '.' %}
-                      {{ splitedFilename[1] }}
-                      </a><br>
-                    </li>
-                    {% assign contentorder = contentorder | plus: 1 %}
-                {% endif %} 
-              {% endif %} 
-            {% endfor %}
-            </ol>
-          </div>
-          <!-- 12 Months -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#twmonths">12 Months</a>
-            </h4>
-          </div>
-          <div id="twmonths" class="panel-collapse collapse">
-            <ol class="list-group">
-            {% for video in site.static_files %} 
-              {% if video.path contains 'vid' %} 
-                {% if video.path contains '12months' %}
-                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
-                      {% assign words = video.path | split: '/' %}
-                      {% assign splitedFilename = words[3] | split: '.' %}
-                      {{ splitedFilename[1] }}
-                      </a><br>
-                    </li>
-                    {% assign contentorder = contentorder | plus: 1 %}
-                {% endif %} 
-              {% endif %} 
-            {% endfor %}
-            </ol>
-          </div>
-          <!-- Bodypart -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#bdparts">Body Parts</a>
-            </h4>
-          </div>
-          <div id="bdparts" class="panel-collapse collapse">
-            <ol class="list-group">
-            {% for video in site.static_files %} 
-              {% if video.path contains 'vid' %} 
-                {% if video.path contains 'Bodypart' %}
-                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
-                      {% assign words = video.path | split: '/' %}
-                      {% assign splitedFilename = words[3] | split: '.' %}
-                      {{ splitedFilename[1] }}
-                      </a><br>
-                    </li>
-                    {% assign contentorder = contentorder | plus: 1 %}
-                {% endif %} 
-              {% endif %} 
-            {% endfor %}
-            </ol>
-          </div>
-          <!-- COLOR ice cream -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#clicecream">Colour</a>
-            </h4>
-          </div>
-          <div id="clicecream" class="panel-collapse collapse">
-            <ol class="list-group">
-            {% for video in site.static_files %} 
-              {% if video.path contains 'vid' %} 
-                {% if video.path contains 'COLOR ice cream' %}    
-                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
-                      {% assign words = video.path | split: '/' %}
-                      {% assign splitedFilename = words[3] | split: '.' %}
-                      {{ splitedFilename[1] }}
-                      </a><br>
-                    </li>
-                    {% assign contentorder = contentorder | plus: 1 %}
-                {% endif %} 
-              {% endif %} 
-            {% endfor %}
-            </ol>
-          </div>
-          <!-- Math -->
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#math">Math</a>
-            </h4>
-          </div>
-          <div id="math" class="panel-collapse collapse">
-            <ol class="list-group">
-            {% for video in site.static_files %} 
-              {% if video.path contains 'vid' %} 
-                {% if video.path contains 'Math' %}    
-                    <li id="subitem"><a id="contentid-{{ contentorder }}" onclick="changesrc('{{ site.baseurl }}{{ video.path }}')">
-                      {% assign words = video.path | split: '/' %}
-                      {% assign splitedFilename = words[3] | split: '.' %}
-                      {{ splitedFilename[1] }}
-                      </a><br>
-                    </li>
-                    {% assign contentorder = contentorder | plus: 1 %}
-                {% endif %} 
-              {% endif %} 
-            {% endfor %}
-            </ol>
-          </div>
-
+              {% endfor %}
+              </ol>
+            </div>
+          {% endfor %}
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
